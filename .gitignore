@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# IDE/Editor files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# macOS folder attributes
+.DS_Store
+
+# MongoDB data directory (if using local MongoDB)
+/data/
+
+# MongoDB log file (if using local MongoDB)
+/mongod.log
