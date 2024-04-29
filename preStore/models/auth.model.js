@@ -2,8 +2,8 @@
 
 const mongoose = require('mongoose');
 const {auth,users} = require('../data');
-const {User} = require('./user.model');
 const {Schema} = mongoose;
+const {User} = require('./user.model'); 
 
 const AuthSchema = new Schema({
     createdAt:Number,
@@ -34,17 +34,18 @@ const Auth = mongoose.model('Auth',AuthSchema);
 const addAuthToDb = ()=>{
     auth.forEach(async (user)=>{
      const newAuthUser = new Auth(user);
-     const savedAuthUser = newAuthUser.save();
+     const savedAuthUser = await newAuthUser.save();
      console.log(savedAuthUser)
     })
 
-    users.forEach((user)=>{
+    users.forEach(async (user)=>{
         const newUser = new User(user);
-        const savedUser  = newUser.save();
+        const savedUser  = await newUser.save();
 
         console.log(savedUser)
     })
 }
+
 
 module.exports = {Auth,addAuthToDb};
 

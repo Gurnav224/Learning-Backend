@@ -10,7 +10,8 @@ const UserSchema = new Schema({
     _id:{type:Schema.Types.ObjectId,ref:'Auth'},
     wishList:[{prouductId:{type:Schema.Types.ObjectId,ref:'Product'}}],
     cart:[{
-        prouductId:{type}
+        productId: { type: Schema.Types.ObjectId, ref: 'Product' }, 
+        quantity: Number
     }],
     addresses:[{
         name:{
